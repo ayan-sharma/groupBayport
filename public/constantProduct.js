@@ -212,24 +212,8 @@ export const personalized_section = [
           items: ['Photo Print', 'Mounted Photo Print', 'Framed Photo Print'],
           banner: {
             text: 'Prints that personify your personality',
-            // image: '/submenu-banner.jpg',
+            image: '/images/Wallpapers_1704884025147.jpg',
           },
-        },
-        {
-          title: 'Poster Prints',
-          items: [],
-        },
-        {
-          title: 'Canvas Prints',
-          items: [],
-        },
-        {
-          title: 'Acrylic Prints',
-          items: [],
-        },
-        {
-          title: 'Hanging Canvas',
-          items: [],
         },
       ],
     },
@@ -242,24 +226,8 @@ export const personalized_section = [
           items: ['Photo Print', 'Mounted Photo Print', 'Framed Photo Print'],
           banner: {
             text: 'Prints that personify your personality',
-            // image: '/submenu-banner.jpg',
+            image: '/images/Wallpapers_1704884025147.jpg',
           },
-        },
-        {
-          title: 'Poster Prints',
-          items: [],
-        },
-        {
-          title: 'Canvas Prints',
-          items: [],
-        },
-        {
-          title: 'Acrylic Prints',
-          items: [],
-        },
-        {
-          title: 'Hanging Canvas',
-          items: [],
         },
       ],
     },
