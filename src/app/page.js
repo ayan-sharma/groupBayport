@@ -52,10 +52,12 @@ export default function Home() {
           heading="Personalized Living Starts Here"
           data={personalized_section}
           uploadedImage={uploadedImage}
+          showMoreText={"Start Creating"}
         />
         <TrendingProducts
           heading="We Curate, You Create - Explore 60K+ Designs"
           data={secondBlock}
+          showMoreText={"Explore More Designs"}
         />
       </div>
 
@@ -82,6 +84,7 @@ export default function Home() {
           heading="Trending Custom Home Decor"
           data={trendingData}
           uploadedImage={uploadedImage}
+          showMoreText={"Create a New Trend"}
         />
 
         <CurtainCreations

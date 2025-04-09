@@ -7,10 +7,10 @@ const PersonalizationPicks = ({ heading, items }) => {
   return (
     <div className="py-10 text-center">
       <h2 className="text-2xl font-semibold mb-6 text-black">{heading}</h2>
-      <div className="flex flex-wrap  justify-between gap-6">
+      <div className="flex flex-wrap   justify-around gap-6">
         {items.map((item, index) => (
           <div key={index} className="flex flex-col items-center">
-            <div className="relative w-24 h-24">
+            <div className="relative w-24 h-24 cursor-pointer">
               <Image
                 src={item.image}
                 alt={item.title}

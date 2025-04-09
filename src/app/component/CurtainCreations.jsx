@@ -50,12 +50,14 @@ function CurtainCreations({
 
           {/* Button */}
           {showMoreText && (
+          <div className="flex justify-center mt-6">
             <button
               onClick={onShowMoreClick}
-              className="bg-pink-500 hover:bg-pink-600 text-white font-semibold py-2 px-6 rounded-md"
+              className="cursor-pointer bg-pink-500 hover:bg-pink-600 text-white font-semibold py-2 px-6 rounded-md"
             >
               {showMoreText}
             </button>
+            </div>
           )}
         </div>
       </div>

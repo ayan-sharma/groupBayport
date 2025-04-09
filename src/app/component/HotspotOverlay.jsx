@@ -14,7 +14,7 @@ const HotspotOverlay = ({ mainImage, hotspots }) => {
           style={{ top: hotspot.y, left: hotspot.x }}
         >
           <button
-            className="bg-pink-500 text-white w-8 h-8 rounded-full flex items-center justify-center shadow-lg hover:scale-110 transition-transform"
+            className="cursor-pointer bg-pink-500 text-white w-8 h-8 rounded-full flex items-center justify-center shadow-lg hover:scale-110 transition-transform"
             onClick={() => setActiveHotspot(activeHotspot === index ? null : index)}
           >
             +

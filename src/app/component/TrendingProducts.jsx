@@ -2,7 +2,7 @@
 import React, { useState } from 'react';
 import Image from 'next/image';
 
-const TrendingProducts = ({ heading, data, uploadedImage }) => {
+const TrendingProducts = ({ heading, data, uploadedImage , showMoreText}) => {
   const [autoFitMap, setAutoFitMap] = useState({});
 
   const toggleAutoFit = (index) => {
@@ -22,7 +22,7 @@ const TrendingProducts = ({ heading, data, uploadedImage }) => {
             const baseImage = uploadedImage ? product?.mockupSrc : product?.imageSrc;
 
             return (
-              <div key={index} className="flex flex-col bg-white border rounded overflow-hidden relative group h-full">
+              <div key={index} className="flex flex-col bg-white overflow-hidden relative group h-full">
                 {/* Auto Fit Toggle */}
                 {uploadedImage && (
                   <div className="absolute top-2 left-2 z-10 bg-white p-1 rounded shadow flex items-center text-sm">
@@ -37,30 +37,32 @@ const TrendingProducts = ({ heading, data, uploadedImage }) => {
 
                 {/* Image Container */}
                 <div className="relative w-full aspect-square flex-shrink-0">
-                  <img
+                  <Image
                     src={baseImage}
                     alt={product?.title}
+                    width={500}  // Specify the width
+                    height={500} // Specify the height
                     className="absolute inset-0 w-full h-full object-cover z-0"
                   />
 
-                {uploadedImage && product?.mockupSrc && (
-                  <div className="absolute inset-0 z-10 pointer-events-none flex items-center justify-center">
-                    <Image
-                      src={uploadedImage}
-                      alt="uploaded overlay"
-                      width={0}
-                      height={0}
-                      sizes="100vw"
-                      style={{
-                        height: '65%',
-                        width: isAutoFit ? '65%' : 'auto',
-                        objectFit: isAutoFit ? 'contain' : 'none',
-                        objectPosition: 'center',
-                        mixBlendMode: 'normal',
-                      }}
-                    />
-                  </div>
-                )}
+                  {uploadedImage && product?.mockupSrc && (
+                    <div className="absolute inset-0 z-10 pointer-events-none flex items-center justify-center">
+                      <Image
+                        src={uploadedImage}
+                        alt="uploaded overlay"
+                        width={0}
+                        height={0}
+                        sizes="100vw"
+                        style={{
+                          height: '65%',
+                          width: isAutoFit ? '65%' : 'auto',
+                          objectFit: isAutoFit ? 'contain' : 'none',
+                          objectPosition: 'center',
+                          mixBlendMode: 'normal',
+                        }}
+                      />
+                    </div>
+                  )}
                 </div>
 
                 {/* Product Info */}
@@ -69,13 +71,24 @@ const TrendingProducts = ({ heading, data, uploadedImage }) => {
                     {product?.title}
                   </h3>
                   <p className="text-center text-gray-900 font-bold text-base">
-                    {product?.price}
+                    {product?.price && <span className="bg-gray-200 p-1">{product?.price}</span>}
                   </p>
                 </div>
               </div>
             );
           })}
         </div>
+
+        {/* Centered Button at the End */}
+        {showMoreText && (
+        <div className="flex justify-center mt-6 ">
+          <button className="cursor-pointer bg-pink-500 hover:bg-pink-600 text-white font-semibold py-2 px-6 rounded-md"
+          >
+            {showMoreText}
+          </button>
+        </div>
+                  )}
+
       </div>
     </div>
   );

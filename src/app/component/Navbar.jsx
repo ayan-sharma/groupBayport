@@ -32,7 +32,7 @@ const Navbar = ({categories}) => {
                 placeholder="Find What Brings You Joy"
                 className="flex-1 px-4 py-2 outline-none text-black"
               />
-              <button className="bg-pink-500 px-4 text-white">
+              <button className="cursor-pointer bg-pink-500 px-4 text-white">
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   fill="none"
@@ -51,15 +51,15 @@ const Navbar = ({categories}) => {
             </div>
           </div>
           <div className="flex items-center space-x-4">
-            <div className="relative">
+            <div className="cursor-pointer relative">
               <Heart alt="wishlist" width={20} height={20} color='black'/>
               <span className="absolute -top-2 -right-2 bg-red-600 text-white rounded-full text-xs px-1">0</span>
             </div>
-            <div className="relative">
+            <div className="cursor-pointer relative">
             <ShoppingBag color='black' alt="cart" width={20} height={20} />
               <span className="absolute -top-2 -right-2 bg-red-600 text-white rounded-full text-xs px-1">0</span>
             </div>
-            <div className="flex items-center space-x-1">
+            <div className="cursor-pointer flex items-center space-x-1">
             <UserRound color='black' alt="user" width={20} height={20} />
               <span className="text-sm text-gray-700">Join/Login</span>
             </div>

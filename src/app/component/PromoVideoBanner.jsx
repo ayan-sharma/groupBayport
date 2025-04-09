@@ -18,13 +18,13 @@ const PromoVideoBanner = ({thumbnailUrl, videoUrl, title, subtitle, promoCode, b
           <p className="text-lg text-gray-700 mb-4">{subtitle}</p>
           <p className="text-3xl font-bold text-pink-600 mb-1">15% OFF Sitewide</p>
           <p className="text-sm text-gray-500 mb-4">+ $15 Worth Wallet Points For Next Purchase</p>
-          <div className="flex items-center justify-center lg:justify-start gap-4">
-            <span className="bg-gray-100 text-pink-600 px-3 py-1 rounded border border-pink-300 font-semibold">
+          <div className="flex items-center justify-center lg:justify-start ">
+            <span className="bg-gray-100 text-pink-600 px-4 py-2  rounded border border-pink-300 font-semibold">
               Code: {promoCode}
             </span>
             <button
               onClick={buttonFunction}
-              className="bg-pink-600 hover:bg-pink-700 text-white px-4 py-2 rounded font-semibold"
+              className="cursor-pointer bg-pink-600 hover:bg-pink-700 text-white px-4 py-2 rounded font-semibold"
             >
               {buttonText}
             </button>

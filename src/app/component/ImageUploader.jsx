@@ -1,5 +1,7 @@
 'use client';
 import React, { useRef, useEffect, useState } from 'react';
+import Image from 'next/image';
+
 
 const ImageUploader = ({ onUpload }) => {
   const fileInputRef = useRef();
@@ -73,10 +75,12 @@ const ImageUploader = ({ onUpload }) => {
           {showModal && (
             <div className="fixed inset-0 bg-black bg-opacity-60 z-50 flex justify-center items-center">
               <div className="bg-white rounded-lg p-4 shadow-md w-[90%] max-w-md text-center relative">
-                <img
+                <Image
                   src={previewImage}
                   alt="Uploaded Preview"
                   className="w-full h-auto rounded mb-4"
+                  width={500}
+                  height={500}
                 />
                 <div className="flex justify-center gap-4">
                   <button

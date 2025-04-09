@@ -1,6 +1,7 @@
 "use client";
 
 import { useRef, useState, useEffect } from "react";
+import Image from 'next/image';
 
 export default function DesignMockup() {
   const [image, setImage] = useState(null);
@@ -63,7 +64,7 @@ export default function DesignMockup() {
         ref={mockupRef}
         className="relative w-[300px] h-[300px] border border-gray-300"
       >
-        <img
+        <Image
           src="/images/VelvetSatin.png" // replace with your mockup
           alt="Mockup"
           className="w-full h-full object-contain"

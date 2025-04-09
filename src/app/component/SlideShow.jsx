@@ -9,7 +9,7 @@ const CreateSpringHome = ({ rating, mainImage, features, buttonFunction }) => {
   return (
     <div className="w-full">
       {/* Clickable Image */}
-      <div onClick={buttonFunction} className="relative w-full h-auto cursor-pointer">
+      <div onClick={buttonFunction} className="cursor-pointer relative w-full h-auto cursor-pointer">
         <Image
           src={mainImage}
           alt="Spring Home Banner"
@@ -44,6 +44,7 @@ const CreateSpringHome = ({ rating, mainImage, features, buttonFunction }) => {
           </div>
           <span className="text-sm text-gray-600">Overall Satisfaction Rating</span>
         </div>
+        <div className="border-t border-black-600 my-4"></div>
 
         {/* Features */}
         {features.map((item, idx) => (
@@ -51,7 +52,7 @@ const CreateSpringHome = ({ rating, mainImage, features, buttonFunction }) => {
             <div className="text-pink-500">{item.icon}</div>
             <div>
               <p className="font-semibold text-gray-800">{item.title}</p>
-              <p className="text-gray-600">{item.subtitle}</p>
+              <p className="font-semibold text-gray-800">{item.subtitle}</p>
             </div>
           </div>
         ))}
