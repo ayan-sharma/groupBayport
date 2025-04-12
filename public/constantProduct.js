@@ -1,77 +1,128 @@
 import { Truck, Scissors, ImageIcon, Printer } from 'lucide-react';
 
 export const trendingData = [
-    {
-      imageSrc: '/images/thirdSection/Panoramic-Tapestry-Lifestyle_Satin.png.webp', // Replace with your actual image path
-      title: 'Custom Panoramic Tapestry - Velvet Satin',
-      price: '$15.07',
-      mockupSrc:"/images/VelvetSatin.png"
+  {
+    imageSrc: '/images/thirdSection/Panoramic-Tapestry-Lifestyle_Satin.png.webp',
+    title: 'Custom Panoramic Tapestry - Velvet Satin',
+    price: '$15.07',
+    mockupSrc: '/images/VelvetSatin.png',
+    printArea: {
+      top: '15%',
+      left: '10%',
+      width: '80%',
+      height: '70%',
     },
-    {
-      imageSrc: '/images/thirdSection/sheer_curtain-polyester_linen_02015929202410.jpg.webp', // Replace with your actual image path
-      title: 'Custom Sheer Curtain - Linen Weave',
-      price: '$45.36',
-      mockupSrc:"/images/linenWeave.png"
+  },
+  {
+    imageSrc: '/images/thirdSection/sheer_curtain-polyester_linen_02015929202410.jpg.webp',
+    title: 'Custom Sheer Curtain - Linen Weave',
+    price: '$45.36',
+    mockupSrc: '/images/linenWeave.png',
+    printArea: {
+      top: '10%',
+      left: '15%',
+      width: '70%',
+      height: '75%',
+    },
+  },
+  {
+    imageSrc: '/images/thirdSection/Womens_hoodie_white.png.webp',
+    title: "Custom Women's Hoodie - White",
+    price: '$42.95',
+    mockupSrc: '/images/thirdSection/hodie_mock.png',
+    printArea: {
+      top: '35%',
+      left: '30%',
+      width: '40%',
+      height: '25%',
+    },
+  },
+  {
+    imageSrc: '/images/thirdSection/Classic-Tote-Bag-Lifestyle.png.webp',
+    title: 'Custom Classic Tote Bag',
+    price: '$32.95',
+    mockupSrc: '/images/tote_bag_mockup.png',
+    printArea: {
+      top: '55%',
+      left: '25%',
+      width: '50%',
+      height: '40%',
+    },
+  },
+  {
+    imageSrc: '/images/thirdSection/Image_3_.jpg.webp',
+    title: 'Custom Coffee Mugs',
+    price: '$34.50',
+    mockupSrc: '/images/thirdSection/coffe_mug_mock.png',
+    printArea: {
+      top: '25%',
+      left: '30%',
+      width: '40%',
+      height: '40%',
+    },
+  },
+  {
+    imageSrc: '/images/thirdSection/waist_apron.png.webp',
+    title: 'Custom Waist Apron',
+    price: '$22.50',
+    mockupSrc: '/images/VelvetSatin.png',
+    printArea: {
+      top: '35%',
+      left: '20%',
+      width: '60%',
+      height: '40%',
+    },
+  },
+  {
+    imageSrc: '/images/thirdSection/Rec_1_Snow-Light-Lifestyle.png.webp',
+    title: 'Rug - Luxe Grain - Rectangle',
+    price: '$92.63',
+    mockupSrc: '/images/VelvetSatin.png',
+    printArea: {
+      top: '20%',
+      left: '10%',
+      width: '80%',
+      height: '60%',
+    },
+  },
+  {
+    imageSrc: '/images/thirdSection/Caviar-Wallpaper-Lifestyle.png.webp',
+    title: 'Custom Wallpaper - Stone Grain',
+    price: '$65.32',
+    mockupSrc: '/images/VelvetSatin.png',
+    printArea: {
+      top: '20%',
+      left: '10%',
+      width: '85%',
+      height: '70%',
+    },
+  },
+  {
+    imageSrc: '/images/thirdSection/Women-Full-Sarong.jpg.webp',
+    title: "Custom Women's Full Sarong",
+    price: '$78.65',
+    mockupSrc: '/images/thirdSection/full_sarong_mock.png',
+    printArea: {
+      top: '30%',
+      left: '25%',
+      width: '50%',
+      height: '50%',
+    },
+  },
+  {
+    imageSrc: '/images/thirdSection/1-Rectangle_Doormat_07154429202408.png.webp',
+    title: 'Doormat - Rectangle',
+    price: '$6.75',
+    mockupSrc: '/images/thirdSection/doormat_mock.png',
+    printArea: {
+      top: '20%',
+      left: '15%',
+      width: '70%',
+      height: '50%',
+    },
+  },
+];
 
-    },
-    {
-      imageSrc: '/images/thirdSection/Womens_hoodie_white.png.webp', // Replace with your actual image path
-      title: "Custom Women's Hoodie - White",
-      price: '$42.95',
-      mockupSrc:"/images/thirdSection/hodie_mock.png"
-
-    },
-    {
-      imageSrc: '/images/thirdSection/Classic-Tote-Bag-Lifestyle.png.webp', // Replace with your actual image path
-      title: 'Custom Classic Tote Bag',
-      price: '$32.95',
-      mockupSrc:"/images/tote_bag_mockup.png"
-
-    },
-    {
-      imageSrc: '/images/thirdSection/Image_3_.jpg.webp', // Replace with your actual image path
-      title: 'Custom Coffee Mugs',
-      price: '$34.50',
-      mockupSrc:"/images/thirdSection/coffe_mug_mock.png"
-
-    },
-    {
-      imageSrc: '/images/thirdSection/waist_apron.png.webp', // Replace with your actual image path
-      title: 'Custom Waist Apron',
-      price: '$22.50',
-      mockupSrc:"/images/VelvetSatin.png"
-
-    },
-    {
-      imageSrc: '/images/thirdSection/Rec_1_Snow-Light-Lifestyle.png.webp', // Replace with your actual image path
-      title: 'Rug - Luxe Grain - Rectangle',
-      price: '$92.63',
-      mockupSrc:"/images/VelvetSatin.png"
-
-    },
-    {
-      imageSrc: '/images/thirdSection/Caviar-Wallpaper-Lifestyle.png.webp', // Replace with your actual image path
-      title: 'Custom Wallpaper - Stone Grain',
-      price: '$65.32',
-      mockupSrc:"/images/VelvetSatin.png"
-
-    },
-    {
-      imageSrc: '/images/thirdSection/Women-Full-Sarong.jpg.webp', // Replace with your actual image path
-      title: "Custom Women's Full Sarong",
-      price: '$78.65',
-      mockupSrc:"/images/thirdSection/full_sarong_mock.png"
-
-    },
-    {
-      imageSrc: '/images/thirdSection/1-Rectangle_Doormat_07154429202408.png.webp', // Replace with your actual image path
-      title: 'Doormat - Rectangle',
-      price: '$6.75',
-      mockupSrc:"/images/thirdSection/doormat_mock.png"
-
-    },
-    // Add more product data here
-  ];
 
   export const secondBlock = [
     {
@@ -117,43 +168,69 @@ export const trendingData = [
     // Add more product data here
   ];
 
-export const personalized_section = [
+  export const personalized_section = [
     {
-      imageSrc: '/images/Custom_Wall_Tapestry_Satin.jpg', // Replace with your actual image path
+      imageSrc: '/images/Custom_Wall_Tapestry_Satin.jpg',
       title: 'Custom Panoramic Tapestry - Velvet Satin',
       price: '$17.69',
-      mockupSrc:"/images/VelvetSatin.png"
-
+      mockupSrc: '/images/VelvetSatin.png',
+      printArea: {
+        top: '15%',
+        left: '10%',
+        width: '80%',
+        height: '70%',
+      },
     },
     {
-      imageSrc: '/images/photo_print_framing.jpg.webp', // Replace with your actual image path
+      imageSrc: '/images/photo_print_framing.jpg.webp',
       title: 'Photo Print Framing',
       price: '$11.07',
-      mockupSrc:"/images/photo_frame_mock.png"
-
+      mockupSrc: '/images/photo_frame_mock.png',
+      printArea: {
+        top: '20%',
+        left: '20%',
+        width: '60%',
+        height: '60%',
+      },
     },
     {
-      imageSrc: '/images/Hanigng_Canvas-_Natural.png.webp', // Replace with your actual image path
+      imageSrc: '/images/Hanigng_Canvas-_Natural.png.webp',
       title: 'Hanigng Canvas-Natural',
       price: '$36.07',
-      mockupSrc:"/images/hanging_canvas_mock.PNG"
-
+      mockupSrc: '/images/hanging_canvas_mock.PNG',
+      printArea: {
+        top: '30%',
+        left: '15%',
+        width: '70%',
+        height: '60%',
+      },
     },
     {
-      imageSrc: '/images/Square_Pillow-_Gold_Jacquard.png.webp', // Replace with your actual image path
+      imageSrc: '/images/Square_Pillow-_Gold_Jacquard.png.webp',
       title: 'Custom Square Throw Pillow',
       price: '$15.07',
-      mockupSrc:"/images/pillow_mockup.png"
-
+      mockupSrc: '/images/pillow_mockup.png',
+      printArea: {
+        top: '20%',
+        left: '20%',
+        width: '65%',
+        height: '65%',
+      },
     },
     {
-      imageSrc: '/images/Custom-Monogram-Arm-Tote-Bag-View-02.png.webp', // Replace with your actual image path
+      imageSrc: '/images/Custom-Monogram-Arm-Tote-Bag-View-02.png.webp',
       title: 'CustomMonogram Arm Tote Bag',
       price: '$27.07',
-      mockupSrc:"/images/tote_bag_mockup.png"
-
+      mockupSrc: '/images/tote_bag_mockup.png',
+      printArea: {
+        top: '55%',
+        left: '25%',
+        width: '50%',
+        height: '40%',
+      },
     },
-  ]
+  ];
+  
 
   export const curtainData = [
     { imageSrc: '/images/demo1.jpg', title: 'Custom Drapes' },

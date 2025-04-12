@@ -1,28 +1,46 @@
 'use client';
 
 import Image from "next/image";
-import TrendingProducts from "./component/TrendingProducts";
+import { useEffect, useState } from "react";
+import dynamic from "next/dynamic";
+
+// Immediate Imports (above the fold)
+import Navbar from "./component/Navbar";
+import ImageUploader from "./component/ImageUploader";
+import CreateSpringHome from "./component/SlideShow";
+
+import mainHomeImage from "../../public/images/mainHomeImage.png";
+import mainImage from "../../public/images/mainImage.jpg";
+
 import {
   categories,
-  curtainData,
   features,
-  hotspots,
   personalized_section,
-  picks,
   secondBlock,
-  timelessTapestries,
+  hotspots,
+  picks,
   trendingData,
+  curtainData,
+  timelessTapestries,
 } from "../../public/constantProduct";
-import CurtainCreations from "./component/CurtainCreations";
-import mainImage from "../../public/images/mainImage.jpg";
-import mainHomeImage from "../../public/images/mainHomeImage.png";
-import CreateSpringHome from "./component/SlideShow";
-import PersonalizationPicks from "./component/PersonalizationPicks";
-import PromoVideoBanner from "./component/PromoVideoBanner";
-import ImageUploader from "./component/ImageUploader";
-import { useEffect, useState } from "react";
-import Navbar from "./component/Navbar";
-import HotspotOverlay from "./component/HotspotOverlay";
+
+// Dynamically import heavier, below-the-fold components
+const TrendingProducts = dynamic(() => import("./component/TrendingProducts"), {
+  loading: () => <div style={{ height: "300px" }}>Loading products...</div>,
+  ssr: false,
+});
+const HotspotOverlay = dynamic(() => import("./component/HotspotOverlay"), {
+  ssr: false,
+});
+const PersonalizationPicks = dynamic(() => import("./component/PersonalizationPicks"), {
+  ssr: false,
+});
+const PromoVideoBanner = dynamic(() => import("./component/PromoVideoBanner"), {
+  ssr: false,
+});
+const CurtainCreations = dynamic(() => import("./component/CurtainCreations"), {
+  ssr: false,
+});
 
 export default function Home() {
   const [uploadedImage, setUploadedImage] = useState(null);
@@ -38,6 +56,7 @@ export default function Home() {
     <div>
       <Navbar categories={categories} />
 
+      {/* Above the fold section */}
       <CreateSpringHome
         rating={4.5}
         mainImage={mainHomeImage}
@@ -47,7 +66,8 @@ export default function Home() {
 
       <ImageUploader onUpload={(url) => setUploadedImage(url)} />
 
-      <div style={{ width: "80%", justifySelf: "center" }}>
+      {/* Below the fold - deferred UI rendering */}
+      <div style={{ width: "80%", margin: "auto" }}>
         <TrendingProducts
           heading="Personalized Living Starts Here"
           data={personalized_section}
@@ -66,7 +86,7 @@ export default function Home() {
         hotspots={hotspots}
       />
 
-      <div style={{ width: "80%", justifySelf: "center" }}>
+      <div style={{ width: "80%", margin: "auto" }}>
         <PersonalizationPicks heading="Top Personalization Picks" items={picks} />
 
         <PromoVideoBanner
@@ -95,6 +115,7 @@ export default function Home() {
           showMoreText="Show Me More"
           onShowMoreClick={() => console.log("Show more clicked!")}
         />
+
         <CurtainCreations
           heading="Timeless Tapestries"
           subHeading="Personalized Tapestries to Reflect Your Essence"

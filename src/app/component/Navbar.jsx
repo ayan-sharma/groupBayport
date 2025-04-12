@@ -23,7 +23,7 @@ const Navbar = ({categories}) => {
                 <div style={{width:"80%", justifySelf:"center"}}>
         <div className="container mx-auto px-4 py-4 flex items-center justify-between">
           <div className="flex items-center space-x-10">
-            <Image src="/retailer_site_logo848.png.webp" alt="logo" width={120} height={40} />
+            <Image src="/retailer_site_logo848.png.webp" alt="logo" width={180} height={32} />
           </div>
           <div className="flex-1 px-10">
             <div className="flex w-full border rounded-md overflow-hidden" style={{border:".313rem solid #f1f1f1"}}>
@@ -75,7 +75,7 @@ const Navbar = ({categories}) => {
                 onMouseLeave={() => setActiveCategory(null)}
               >
                 <div className="flex flex-col items-center space-y-2 cursor-pointer">
-                <Image src={category.icon} alt="" width={30} height={30} />
+                <Image src={category.icon} alt="" width={60} height={60} />
                   <div className="flex items-center">
                   <span className="font-medium text-gray-700">{category.name}</span>
                   <ChevronDown size={16} color='black'/>

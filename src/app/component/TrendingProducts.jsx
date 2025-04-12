@@ -2,7 +2,7 @@
 import React, { useState } from 'react';
 import Image from 'next/image';
 
-const TrendingProducts = ({ heading, data, uploadedImage , showMoreText}) => {
+const TrendingProducts = ({ heading, data, uploadedImage, showMoreText }) => {
   const [autoFitMap, setAutoFitMap] = useState({});
 
   const toggleAutoFit = (index) => {
@@ -20,6 +20,7 @@ const TrendingProducts = ({ heading, data, uploadedImage , showMoreText}) => {
           {data?.map((product, index) => {
             const isAutoFit = autoFitMap[index] ?? true;
             const baseImage = uploadedImage ? product?.mockupSrc : product?.imageSrc;
+            const printArea = product?.printArea; // New: directly read from product
 
             return (
               <div key={index} className="flex flex-col bg-white overflow-hidden relative group h-full">
@@ -40,13 +41,32 @@ const TrendingProducts = ({ heading, data, uploadedImage , showMoreText}) => {
                   <Image
                     src={baseImage}
                     alt={product?.title}
-                    width={500}  // Specify the width
-                    height={500} // Specify the height
+                    width={500}
+                    height={500}
                     className="absolute inset-0 w-full h-full object-cover z-0"
                   />
 
                   {uploadedImage && product?.mockupSrc && (
-                    <div className="absolute inset-0 z-10 pointer-events-none flex items-center justify-center">
+                    <div
+                      className="absolute z-10 pointer-events-none"
+                      style={
+                        printArea
+                          ? {
+                              top: printArea.top,
+                              left: printArea.left,
+                              width: printArea.width,
+                              height: printArea.height,
+                              position: 'absolute',
+                              overflow: 'hidden',
+                            }
+                          : {
+                              inset: 0,
+                              display: 'flex',
+                              alignItems: 'center',
+                              justifyContent: 'center',
+                            }
+                      }
+                    >
                       <Image
                         src={uploadedImage}
                         alt="uploaded overlay"
@@ -54,8 +74,8 @@ const TrendingProducts = ({ heading, data, uploadedImage , showMoreText}) => {
                         height={0}
                         sizes="100vw"
                         style={{
-                          height: '65%',
-                          width: isAutoFit ? '65%' : 'auto',
+                          width: isAutoFit ? '100%' : 'auto',
+                          height: '100%',
                           objectFit: isAutoFit ? 'contain' : 'none',
                           objectPosition: 'center',
                           mixBlendMode: 'normal',
@@ -79,16 +99,14 @@ const TrendingProducts = ({ heading, data, uploadedImage , showMoreText}) => {
           })}
         </div>
 
-        {/* Centered Button at the End */}
+        {/* Show More Button */}
         {showMoreText && (
-        <div className="flex justify-center mt-6 ">
-          <button className="cursor-pointer bg-pink-500 hover:bg-pink-600 text-white font-semibold py-2 px-6 rounded-md"
-          >
-            {showMoreText}
-          </button>
-        </div>
-                  )}
-
+          <div className="flex justify-center mt-6">
+            <button className="cursor-pointer bg-pink-500 hover:bg-pink-600 text-white font-semibold py-2 px-6 rounded-md">
+              {showMoreText}
+            </button>
+          </div>
+        )}
       </div>
     </div>
   );
